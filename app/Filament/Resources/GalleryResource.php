@@ -10,11 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Infolists\Components\IconEntry;
-use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\SpatieMediaLibraryImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
@@ -33,9 +29,21 @@ class GalleryResource extends Resource
                     ->required()
                     ->maxValue(50)
                     ->columnSpan('full'),
-                Forms\Components\Textarea::make('description')
-                    ->rows(10)
-                    ->cols(10)
+                Forms\Components\RichEditor::make('description')
+                    ->toolbarButtons([
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'underline',
+                        'undo',
+                    ])
                     ->columnSpan('full'),
                 Forms\Components\Section::make('Image')
                     ->schema([
@@ -85,7 +93,7 @@ class GalleryResource extends Resource
         return $infolist
             ->schema([
                 SpatieMediaLibraryImageEntry::make('images')
-                ->collection('blog-images'),
+                    ->collection('blog-images'),
                 TextEntry::make('title'),
                 TextEntry::make('description'),
             ])

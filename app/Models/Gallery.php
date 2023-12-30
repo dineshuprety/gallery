@@ -15,4 +15,8 @@ class Gallery extends Model implements HasMedia
         'title',
         'description',
     ];
+
+    protected $casts = [
+        'created_at' => 'datetime'
+    ];
 }

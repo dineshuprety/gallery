@@ -19,3 +19,4 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('blog', [GalleryController::class, 'index'])->name('blog.index');
+Route::get('blog/{id}', [GalleryController::class, 'show'])->name('blog.show');
