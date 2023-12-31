@@ -6,7 +6,7 @@
             @foreach ($blogs as $item)
             <article
                 class="flex flex-col w-full mx-auto my-4 overflow-hidden text-gray-900 transition bg-white border border-gray-300 rounded-2xl hover:translate-y-2 hover:shadow-lg">
-                <a wire:navigate href="{{route('blog.show',['blog'=> $item->id])}}">
+                <a wire:navigate href="{{route('blog.show',['id'=> $item->id])}}">
                     <img src="{{ $item->getFirstMedia('blog-images')->getUrl() }}" class="object-cover w-full h-56"
                         alt="" />
                     <div class="flex-auto px-6 py-5">

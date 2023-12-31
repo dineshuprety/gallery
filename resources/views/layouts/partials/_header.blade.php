@@ -23,7 +23,7 @@
         <ul class="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
             <li class="md:mr-12"><a wire:navigate href="{{route('home')}}">Home</a></li>
             <li class="md:mr-12"><a wire:navigate href="{{route('blog.index')}}">Jatras</a></li>
-            <li class="md:mr-12"><a wire:navigate href="#">Contact</a></li>
+            <li class="md:mr-12"><a wire:navigate href="{{route('contact')}}">Contact</a></li>
         </ul>
     </nav>
 </header>

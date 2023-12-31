@@ -20,3 +20,6 @@ Route::get('/', function () {
 
 Route::get('blog', [GalleryController::class, 'index'])->name('blog.index');
 Route::get('blog/{id}', [GalleryController::class, 'show'])->name('blog.show');
+Route::get('contact', function () {
+    return view('contact');
+})->name('contact');
